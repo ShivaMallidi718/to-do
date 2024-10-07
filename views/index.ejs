@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">TO-DO</h1>
+        <%if(toDoTasks.length === 0){%>
+	<h2>Add tasks and start your day</h2>
+	<%}else{%>
+	<%toDoTasks.forEach(toDoTask=>{%>
+            <div class="task">
+                <p><%=toDoTask.task%></p>
+                <a href="tasks/delete/<%=toDoTask.id%>"><button>MARK COMPLETED</button></a>
+                <a href="tasks/edit/<%=toDoTask.id%>"><button>EDIT TASK</button></a>
+            </div>
+        <%});%>
+	<%}%>
+        <div class="new">
+            <a href="new-task"><button id="new-task">ADD NEW TASK</button></a>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Enter your task</h1>
+    <%if(locals.task){%>
+        <form action="/edit-task" method="post">
+            <input type="hidden" name="id" value="<%=taskID%>">
+            <textarea name="task" cols="30" rows="10" required><%=task%></textarea><br>
+            <button type="submit" value="ADD TASK">UPDATE</button>
+        </form>
+    <%}else{%>
+        <form action="/new-task" method="post">
+            <textarea name="task" cols="30" rows="10" required></textarea><br>
+            <button type="submit" value="ADD TASK">ADD TASK</button>
+        </form>
+    <%}%>
+    
+</body>
+</html>
